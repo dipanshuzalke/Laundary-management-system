@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (username, password) => {
     try {
       // default API URL hardcoded for local backend running on 5000
-      const res = await axios.post('http://localhost:5000/api/auth/login', { username, password });
+      const res = await axios.post('/api/auth/login', { username, password });
       setUser(res.data);
       localStorage.setItem('user', JSON.stringify(res.data));
       axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.token}`;
@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (username, password) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', { username, password });
+      const res = await axios.post('/api/auth/register', { username, password });
       setUser(res.data);
       localStorage.setItem('user', JSON.stringify(res.data));
       axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.token}`;

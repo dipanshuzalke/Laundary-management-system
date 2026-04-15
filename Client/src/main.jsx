@@ -1,9 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import axios from 'axios'
 import './index.css'
 import App from './App.jsx'
 import { AuthProvider } from './context/AuthContext.jsx'
 import { ThemeProvider } from './context/ThemeContext.jsx'
+
+// Automatically point to your Render backend in production!
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'https://laundary-management-system-t1lg.onrender.com';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

@@ -12,7 +12,7 @@ const OrdersList = () => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      let url = 'http://localhost:5000/api/orders?';
+      let url = '/api/orders?';
       if (search) url += `search=${search}&`;
       if (statusFilter) url += `status=${statusFilter}`;
       
@@ -36,7 +36,7 @@ const OrdersList = () => {
 
   const handleStatusChange = async (orderId, newStatus) => {
     try {
-      await axios.patch(`http://localhost:5000/api/orders/${orderId}/status`, { status: newStatus });
+      await axios.patch(`/api/orders/${orderId}/status`, { status: newStatus });
       setOrders(orders.map(order => order._id === orderId ? { ...order, status: newStatus } : order));
     } catch (error) {
       console.error('Error updating status:', error);

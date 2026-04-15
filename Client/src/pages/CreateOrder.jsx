@@ -71,7 +71,7 @@ const CreateOrder = () => {
     };
 
     try {
-      await axios.post('http://localhost:5000/api/orders', payload);
+      await axios.post('/api/orders', payload);
       setSuccess(true);
       setTimeout(() => {
         navigate('/orders');
