@@ -68,6 +68,10 @@ npm run dev
    - **Wrong**: The node server crashed on launch attempting to connect to a local Mongoose database that did not exist natively on the host machine.
    - **Improved**: Pivoted from a local unconfigured MongoDB instance to utilizing a live MongoDB Atlas cloud cluster securely stored in the `.env` variables to ensure guaranteed connection stability across devices.
 
+4. **MongoDB Atlas IP Whitelist (Network Access)**
+   - **Wrong**: Render API deployments crashed identically during the DB boot sequence displaying a 502/CORS error on the frontend because the MongoDB Atlas cluster actively rejected Render's dynamic production IP address.
+   - **Improved**: Updated the MongoDB Atlas Network Access configuration to specifically Whitelist `0.0.0.0/0` (Allow Access From Anywhere), granting the cloud-hosted Node backend secure authorization to connect to the database.
+
 ---
 
 ## 🔹 Tradeoffs
