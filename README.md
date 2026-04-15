@@ -103,3 +103,16 @@ However, for backend engineers or integration tests, the Postman-equivalent REST
 - `GET /api/orders` *(Requires Auth)* - Query active orders (Params: `?search={name or phone}&status={status}`)
 - `POST /api/orders` *(Requires Auth)* - Submit new order (Body: `customerName`, `garments[]`, `totalAmount`)
 - `PATCH /api/orders/:id/status` *(Requires Auth)* - Update existing order lifecycle status
+
+---
+
+## 🔹 UI Previews
+
+### Dashboard (`/`)
+![Dashboard Demo](Client/src/assets/Screenshot%20(692).png)
+
+### Orders Management (`/orders`)
+![Orders List Demo](Client/src/assets/Screenshot%20(693).png)
+
+### Create Order (`/orders/new`)
+![Create Order Demo](Client/src/assets/Screenshot%20(694).png)
