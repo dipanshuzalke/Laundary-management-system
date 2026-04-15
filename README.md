@@ -2,6 +2,11 @@
 
 A full-stack web application designed to manage laundry orders, track garments, auto-calculate bills, and provide realtime dashboard metrics for business operations.
 
+**🚀 Live Preview:** [https://laundary-management-system-nu.vercel.app/](https://laundary-management-system-nu.vercel.app/)
+
+- **Frontend Deploy (Vercel)**: [https://laundary-management-system-nu.vercel.app/](https://laundary-management-system-nu.vercel.app/)
+- **Backend API (Render)**: [https://laundary-management-system-t1lg.onrender.com/](https://laundary-management-system-t1lg.onrender.com/)
+
 ## 🔹 Setup Instructions
 
 ### 1. Database Configuration
