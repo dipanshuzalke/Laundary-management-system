@@ -3,7 +3,7 @@
 The development of the **Mini Laundry Order Management System** is complete! We have built a full-stack application with a robust Node.js/Express backend and a beautiful, AI-first dynamic React frontend.
 
 > [!IMPORTANT]
-> To run the system, you will need to start both the backend server and the frontend client.
+> To run the system, you will need to start both the backend server and the frontend client simultaneously.
 
 ## What Was Built
 
@@ -14,8 +14,8 @@ We implemented a secured API to handle all data management.
 * **Dashboard API**: An aggregation endpoint providing real-time metrics (Total Orders, Revenue, recent orders, status breakdown).
 
 ### 2. Frontend Client (`/Client`)
-A sleek, modern dashboard styled with Tailwind CSS, featuring subtle micro-animations and a premium look.
-* **Login View**: A beautiful sign-in page with validation and secure JWT storage context.
+A sleek, modern dashboard styled with Tailwind CSS v4, featuring dark mode support and a premium look.
+* **Login/Register Views**: A beautiful authentication flow with validation and secure JWT context mapping.
 * **Main Dashboard**: Gives a 30,000-foot view of the laundry business. Real-time statistics, progress bars for order statuses, and a recent orders table.
 * **Orders List**: A searchable and filterable table of all orders. You can directly change string statuses here (e.g. `RECEIVED` ➔ `PROCESSING`).
 * **Create Order**: Dynamic form allowing staff to add multiple custom garments (Shirts, Pants, Suits, etc.), auto-calculating the total estimated bill before submission.
@@ -26,23 +26,24 @@ You'll need two separate terminal windows.
 
 **Terminal 1: Start Backend**
 ```powershell
-cd "f:\Mini Laundry Order Management System\Server"
-npm start
+cd Server
+npm run dev
+# OR: npm start
 ```
-*Make sure MongoDB is running locally on port 27017, or update your `.env` connection string.*
+*Make sure your `.env` contains your MongoDB Atlas connection string.*
 
 **Terminal 2: Start Frontend**
 ```powershell
-cd "f:\Mini Laundry Order Management System\Client"
+cd Client
 npm run dev
 ```
 
 > [!TIP]
 > **To Test:** 
-> 1. Use an HTTP client (like Postman) to create a user at `POST http://localhost:5000/api/auth/register` with `{ "username": "admin", "password": "password" }`.
-> 2. Open the frontend URL (e.g., `http://localhost:5173`) and sign in using the credentials you just created!
+> 1. Open the frontend URL (e.g., `http://localhost:5173`) and sign up a new account using the Registration Page.
+> 2. Login, try creating a test order, and observe the dashboard update instantly.
 
 ## Validation Results
-- Tailwind CSS and `lucide-react` icons are fully integrated.
+- Tailwind CSS v4 and `lucide-react` icons are fully integrated and actively swapping for Light/Dark mode.
 - Protected Routes correctly block unauthorized access and redirect to the Login screen.
-- Forms capture React state properly and send correct payloads to MongoDB.
+- The Node Express API flawlessly handles JWT edge cases without crashing.
